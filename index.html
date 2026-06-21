@@ -74,13 +74,15 @@
 
   /* ---------- hero ---------- */
   .hero{text-align:center;padding:54px 0 30px}
+  .hero .portraits{display:flex;gap:22px;justify-content:center;align-items:center;margin:0 auto 26px}
   .hero .portrait{
-    width:172px;height:172px;border-radius:50%;margin:0 auto 26px;
-    object-fit:cover;object-position:center 30%;
+    width:150px;height:150px;border-radius:50%;
+    object-fit:cover;object-position:center 28%;
     filter:saturate(.92) contrast(1.02);
     border:3px solid var(--paper);
     box-shadow:0 0 0 3px var(--gold), var(--shadow);
   }
+  @media(max-width:430px){.hero .portraits{gap:14px}.hero .portrait{width:128px;height:128px}}
   .kicker{font-size:14px;letter-spacing:.16em;color:var(--gold-deep);font-weight:600;margin-bottom:14px}
   .hero h1{font-size:clamp(30px,6.4vw,46px);font-weight:900}
   .hero .name{
@@ -235,7 +237,10 @@
 
   <!-- 1. HERO -->
   <section class="hero wrap">
-    <img class="portrait reveal" src="assets/img/hero-face.jpeg" alt="מלכיה גרוס הי״ד">
+    <div class="portraits reveal">
+      <img class="portrait" src="assets/img/hero-smile.jpeg" alt="מלכיה גרוס הי״ד">
+      <img class="portrait" src="assets/img/hero-desert.jpeg" alt="מלכיה גרוס הי״ד">
+    </div>
     <div class="kicker reveal">לזכרו</div>
     <h1 class="reveal">ממשיכים את האור של מלכיה
       <span class="name">רס״ל מלכיה גרוס הי״ד</span>
