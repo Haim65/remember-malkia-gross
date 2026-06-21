@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="ממשיכים את האור של מלכיה">
 <meta property="og:description" content="לזכרו של רס״ל מלכיה גרוס הי״ד. מיזמי הנצחה ודרכים להמשיך את האור שלו.">
-<meta property="og:image" content="assets/img/badge.jpeg">
+<meta property="og:image" content="assets/img/hero.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -76,15 +76,14 @@
 
   /* ---------- hero ---------- */
   .hero{text-align:center;padding:54px 0 30px}
-  .hero .portraits{display:flex;gap:22px;justify-content:center;align-items:center;margin:0 auto 26px}
   .hero .portrait{
-    width:150px;height:150px;border-radius:50%;
-    object-fit:cover;object-position:center 28%;
-    filter:saturate(.92) contrast(1.02);
+    width:178px;height:178px;border-radius:50%;margin:0 auto 26px;
+    object-fit:cover;object-position:center 22%;
+    filter:saturate(.95) contrast(1.02);
     border:3px solid var(--paper);
     box-shadow:0 0 0 3px var(--gold), var(--shadow);
   }
-  @media(max-width:430px){.hero .portraits{gap:14px}.hero .portrait{width:128px;height:128px}}
+  @media(max-width:430px){.hero .portrait{width:152px;height:152px}}
   .kicker{font-size:14px;letter-spacing:.16em;color:var(--gold-deep);font-weight:600;margin-bottom:14px}
   .hero h1{font-size:clamp(30px,6.4vw,46px);font-weight:900}
   .hero .name{
@@ -239,10 +238,7 @@
 
   <!-- 1. HERO -->
   <section class="hero wrap">
-    <div class="portraits reveal">
-      <img class="portrait" src="assets/img/hero-smile.jpeg" alt="מלכיה גרוס הי״ד">
-      <img class="portrait" src="assets/img/hero-desert.jpeg" alt="מלכיה גרוס הי״ד">
-    </div>
+    <img class="portrait reveal" src="assets/img/hero.jpeg" alt="מלכיה גרוס הי״ד">
     <div class="kicker reveal">לזכרו</div>
     <h1 class="reveal">ממשיכים את האור של מלכיה
       <span class="name">רס״ל מלכיה גרוס הי״ד</span>
@@ -270,13 +266,11 @@
       </div>
 
       <div class="gallery">
-        <figure class="medallion">
-          <img src="assets/img/badge.jpeg" alt="משמחים עם מלכיה, לזכר הגיבור מלכיה גרוס הי״ד">
-          <figcaption>משמחים עם מלכיה</figcaption>
+        <figure>
+          <img src="assets/img/gallery-smile.jpeg" alt="מלכיה גרוס הי״ד מחייך">
         </figure>
         <figure>
-          <img src="assets/img/poster.jpeg" alt="כרזת זיכרון, ממשיכים את האור של מלכיה">
-          <figcaption>ממשיכים את האור</figcaption>
+          <img src="assets/img/gallery-desert.jpeg" alt="מלכיה גרוס הי״ד בשירות הצבאי">
         </figure>
       </div>
 
