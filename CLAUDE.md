@@ -6,11 +6,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Pre-development. The repository currently contains **no application code, build tooling, or tests** — only design references in `Refeence/` and project scaffolding (git, `.gitignore`). There is no stack chosen yet, so there are no build/lint/test commands to document. Update this file with real commands and architecture once code exists.
 
+## Deliverable & decisions
+
+- **Deliverable:** a single self-contained `index.html` (HTML + CSS + JS inline), Hebrew RTL, responsive, accessible contrast. Serves as a hub for Malkia's memorial projects.
+- **Tone:** dignified, warm, restrained. All Hebrew prose humanized per `anti-ai.md` (no em dashes, no AI clichés, varied sentence length, specific).
+- **Deploy target:** GitHub Pages (git already initialized; needs a GitHub account + push).
+- **Remembrance content:** user provides a base; Claude supplements from public sources. Every bio/story draft must be approved by the user before it goes into the page (memorial for a real person — do not invent facts).
+- **Backoffice (DEFERRED):** v1 ships the remembrance section with **placeholders** for bio/stories/photos, structured so content can be slotted in later. No CMS/admin/database in v1. A real backoffice (options considered: Supabase DB+admin, static local editor, or Decap CMS) is a later version once the family decides how they want to edit. Keep the remembrance markup data-driven/clearly delimited so a backoffice can plug in without a rewrite.
+- **QR:** generated inside the file from the donation URL so the file stays self-contained and the QR always matches the link. Must actually scan to the donation page.
+
+### Required page sections (all six must be present)
+1. Hero — in memory of רס"ל מלכיה גרוס הי"ד.
+2. **Remembrance area** (added requirement) — photos, biography, stories.
+3. Donation link + working QR code beside it.
+4. Project 1 — WhatsApp shidduch groups, organized by age group.
+5. Project 2 — link to existing "מלקיטוב" site.
+6. Project 3 — Instagram: https://www.instagram.com/remember_malkia_gross?igsh=MWRoeTFvczQxeWhrdQ==
+7. Two contacts (POC) — each with phone + email, for direct donations.
+
+### Inputs (received 2026-06-21)
+- **Design references:** files in `Refeence/` (infographic, photos, campaign PDF) — that's the full reference set.
+- **Donation page (also the QR target):** https://links.payboxapp.com/lfuS4UIPR0b
+- **WhatsApp shidduch groups** (`Refeence/Shiduch groups Whatsapp`), by age: 18-25 (×3), 25-30 (×4), 30-35 (×3), 35-40 (×2), 40-60 (×2), 60+ (×1).
+- **Malkitov (מלכי-טוב):** https://share.google/Bl4gZRizckTWUYvxu (resolve to canonical URL during build).
+- **Instagram:** https://www.instagram.com/remember_malkia_gross?igsh=MWRoeTFvczQxeWhrdQ==
+- **Contacts (POC):** אורי וולף — Oriwolf0@gmail.com, 058-400-0492 · אלידע הכהן דויטש — elyada10@gmail.com, 058-760-5879
+- **Remembrance bio/stories:** placeholders for v1 (see Backoffice note).
+
 ## Progress log
 
 Kept current after each step so a future session can pick up where we left off. Newest first.
 
-- **2026-06-21** — Initialized git repository (`main` branch). Added `.gitignore` (Node/Next/Vite-oriented). Created this CLAUDE.md (intent-only). No stack chosen yet; next step is to decide the tech stack and scaffold the site.
+- **2026-06-21** — Built `index.html` (the full site) and verified it. Approved design direction "אור מאופק" (navy + gold + cream; Frank Ruhl Libre headings + Heebo body). All 6 sections present + remembrance area with placeholders. QR baked in as inline SVG (generated with `segno` from the PayBox URL; scannable, offline-safe). Hero portrait cropped from `poster.jpeg` via Pillow → `assets/img/hero-face.jpeg`. WhatsApp groups are data-driven (JS array in the page) for easy updates. Verified rendering at desktop (900px) and mobile (390px) with headless Chrome — layout, QR, and chips look correct. Malkitov link resolved to https://malkitov.com/. Next: deploy to GitHub Pages.
+  - **Assets used by the page:** `assets/img/hero-face.jpeg` (hero), `assets/img/badge.jpeg` + `assets/img/poster.jpeg` (gallery), inline QR. `assets/qr-donation.svg` kept as the QR source artifact.
+  - **Build helpers:** Python `segno` (QR) and `pillow` (crop) are installed in the local Python 3.11; not part of the deployed site.
+- **2026-06-21** — Planning phase. Defined deliverable, sections, tone, and the ask_me_first input list. Decisions confirmed with user: deploy = GitHub Pages; remembrance content = user-provided base + Claude supplement (drafts approved before use).
+- **2026-06-21** — Initialized git repository (`main` branch). Added `.gitignore` (Node/Next/Vite-oriented). Created this CLAUDE.md (intent-only).
 
 ## Project
 
