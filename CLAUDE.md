@@ -33,10 +33,17 @@ Pre-development. The repository currently contains **no application code, build 
 - **Contacts (POC):** אורי וולף — Oriwolf0@gmail.com, 058-400-0492 · אלידע הכהן דויטש — elyada10@gmail.com, 058-760-5879
 - **Remembrance bio/stories:** placeholders for v1 (see Backoffice note).
 
+## Live site
+
+- **URL:** https://haim65.github.io/remember-malkia-gross/
+- **Repo:** https://github.com/Haim65/remember-malkia-gross (public, owner `Haim65`)
+- **Hosting:** GitHub Pages, source = `main` branch, `/` root. Deploys automatically on push to `main`.
+
 ## Progress log
 
 Kept current after each step so a future session can pick up where we left off. Newest first.
 
+- **2026-06-21** — Deployed to GitHub Pages. Created public repo `Haim65/remember-malkia-gross`, pushed `main`, enabled Pages (main/root). Verified live at https://haim65.github.io/remember-malkia-gross/ (HTTP 200, build `built`) and confirmed the deployed page renders correctly over HTTPS (fonts, images, QR). To update the site in future: commit to `main` and push — Pages rebuilds automatically.
 - **2026-06-21** — Built `index.html` (the full site) and verified it. Approved design direction "אור מאופק" (navy + gold + cream; Frank Ruhl Libre headings + Heebo body). All 6 sections present + remembrance area with placeholders. QR baked in as inline SVG (generated with `segno` from the PayBox URL; scannable, offline-safe). Hero portrait cropped from `poster.jpeg` via Pillow → `assets/img/hero-face.jpeg`. WhatsApp groups are data-driven (JS array in the page) for easy updates. Verified rendering at desktop (900px) and mobile (390px) with headless Chrome — layout, QR, and chips look correct. Malkitov link resolved to https://malkitov.com/. Next: deploy to GitHub Pages.
   - **Assets used by the page:** `assets/img/hero-face.jpeg` (hero), `assets/img/badge.jpeg` + `assets/img/poster.jpeg` (gallery), inline QR. `assets/qr-donation.svg` kept as the QR source artifact.
   - **Build helpers:** Python `segno` (QR) and `pillow` (crop) are installed in the local Python 3.11; not part of the deployed site.
